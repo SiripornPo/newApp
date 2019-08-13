@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.4",
+    "react-native": "^0.60.4",
     "react-navigation": "^2.18.3"
   },
   "devDependencies": {
@@ -24,5 +24,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./asset/fonts"
+    ]
   }
 }

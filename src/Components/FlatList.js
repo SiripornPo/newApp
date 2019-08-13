@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, StatusBar, TouchableOpacity, Platform } from 'react-native'
 import { normalize, height, width } from './functions/normalize';
-import { color, icon } from '../../asset'
+import { color, icon, font } from '../../asset'
 
 let h = Platform.OS === 'android' ? (StatusBar.currentHeight + normalize(55)) : (height > 812 || width > 812) ? normalize(60) : normalize(100);
 
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     textMenu: {
         fontSize: normalize(24),
         marginTop: normalize(2),
-        color: color.text
+        color: color.text,
+        fontFamily: font.regular
     },
     containerEmployee: {
         paddingVertical: normalize(6),
