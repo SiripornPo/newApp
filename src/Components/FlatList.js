@@ -13,13 +13,21 @@ export const RenderMenu = ({ item, navigation }) => {
     </TouchableOpacity >
 }
 
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+export const RenderListMenu = ({ item, index, navigation, type }) => {
+    let { navigate } = navigation
+    return <TouchableOpacity style={[styles.containerListMenu]} key={item.menu_id} onPress={() => navigate('ListMenuDetail', { type, item })}>
+        <View>
+            <Text style={[styles.name]}>{index + 1}. {item.menu_name}</Text>
+            <Text style={[styles.position]}>ราคา: {item.menu_price || '-'} บาท</Text>
+        </View>
+        <Image source={icon.back} style={[styles.iconNext]} resizeMode={'contain'} />
+    </TouchableOpacity>
+}
 
-
-
-
-// ========================================================================================================================================
-// ========================================================================================================================================
+// ======================================================================================================================================================
+// ======================================================================================================================================================
 
 const styles = StyleSheet.create({
     containerMenu: {
@@ -36,7 +44,7 @@ const styles = StyleSheet.create({
         color: color.text,
         fontFamily: font.regular
     },
-    containerEmployee: {
+    containerListMenu: {
         paddingVertical: normalize(6),
         paddingHorizontal: normalize(10),
         flexDirection: 'row',
@@ -46,10 +54,10 @@ const styles = StyleSheet.create({
         borderBottomColor: color.bg
     },
     name: {
-        fontSize: normalize(22)
+        fontSize: normalize(16)
     },
     position: {
-        fontSize: normalize(20)
+        fontSize: normalize(10)
     },
     iconNext: {
         transform: [{ rotate: '180deg' }],

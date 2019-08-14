@@ -5,6 +5,7 @@ import { HeaderTitle, HeaderBack } from './Components/Header'
 import PageHome from './Page/Page-Home';
 import PageDetail from './Page/Page-Detail';
 import ListMenuAllScene from './Page/Page-ListMenuAll'
+import ListMenuDetail from './Page/Page-ListMenuDetail'
 
 const HomeStack = createStackNavigator({
     Main: {
@@ -20,13 +21,16 @@ const HomeStack = createStackNavigator({
             headerRight: <View />,
         }
     },
-    Main2: {
-        screen: PageHome // Page2
-    },
-    Main3: {
-        screen: PageHome // Page3
+    ListMenuDetail: {
+        screen: ListMenuDetail,
+        navigationOptions: {
+            headerLeft: <HeaderBack />,
+            headerRight: <View />,
+        }
     },
 })
+
+// ============================================================================
 
 const DetailStack = createStackNavigator({
     Second: {
@@ -34,10 +38,11 @@ const DetailStack = createStackNavigator({
     }
 })
 
+// ============================================================================
+
 export const MainTab = createBottomTabNavigator({
     Main: {
         screen: HomeStack,
-
     },
     Second: {
         screen: DetailStack

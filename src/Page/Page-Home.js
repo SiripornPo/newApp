@@ -15,12 +15,17 @@ export default class PageHome extends Component {
                     style={{ width, flex: 1, }}
                     keyExtractor={(item) => item.id + ''}
                     bounces={false}
-                    renderItem={({ item, index }) => <RenderMenu item={item} navigation={this.props.navigation} />}
+                    renderItem={({ item, index }) => <RenderMenu
+                        item={item}
+                        navigation={this.props.navigation} />}
                 />
             </View>
         )
     }
 }
+
+// ======================================================================================================================================================
+// ======================================================================================================================================================
 
 const styles = StyleSheet.create({
     container: {
